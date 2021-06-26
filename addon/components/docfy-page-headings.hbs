@@ -1,37 +1,37 @@
 <div
-  class='overflow-y-auto sticky top-16 max-h-(screen-16) pt-12 pb-4 -mt-12 text-sm'
+  class="overflow-y-auto sticky top-16 max-h-(screen-16) pt-12 pb-4 -mt-12 text-sm"
 >
   <DocfyOutput @fromCurrentURL={{true}} as |page|>
     {{#if page.headings.length}}
       <ul>
         {{#each page.headings as |heading|}}
-          <li class='pb-2 border-l border-gray-400 dark:border-gray-700'>
+          <li class="pb-2 border-l border-gray-400 dark:border-gray-700">
             <a
-              href='#{{heading.id}}'
-              class='transition block px-2 py-1 border-l-2 hover:text-primary-700 dark:hover:text-primary-300
+              href="#{{heading.id}}"
+              class="transition block px-2 py-1 border-l-2 hover:text-primary-700 dark:hover:text-primary-300
                 {{if
                   (docfy-eq heading.id @currentHeadingId)
-                  'border-primary-700 text-primary-700 dark:border-primary-500 dark:text-primary-500'
-                  'border-transparent'
-                }}'
-              {{on 'click' this.onClick}}
+                  "border-primary-700 text-primary-700 dark:border-primary-500 dark:text-primary-500"
+                  "border-transparent"
+                }}"
+              {{on "click" this.onClick}}
             >
               {{heading.title}}
             </a>
 
             {{#if heading.headings.length}}
-              <ul class=''>
+              <ul class="">
                 {{#each heading.headings as |subHeading|}}
                   <li>
                     <a
-                      href='#{{subHeading.id}}'
-                      class='transition block pl-6 py-1 border-l-2 hover:text-primary-700 dark:hover:text-primary-300
+                      href="#{{subHeading.id}}"
+                      class="transition block pl-6 py-1 border-l-2 hover:text-primary-700 dark:hover:text-primary-300
                         {{if
                           (docfy-eq subHeading.id @currentHeadingId)
-                          'border-primary-700 text-primary-700 dark:border-primary-500 dark:text-primary-500'
-                          'border-transparent'
-                        }}'
-                      {{on 'click' this.onClick}}
+                          "border-primary-700 text-primary-700 dark:border-primary-500 dark:text-primary-500"
+                          "border-transparent"
+                        }}"
+                      {{on "click" this.onClick}}
                     >
                       {{subHeading.title}}
                     </a>

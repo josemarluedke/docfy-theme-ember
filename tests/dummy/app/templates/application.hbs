@@ -1,13 +1,22 @@
-{{page-title 'Dummy'}}
+{{page-title "Dummy"}}
 
 <DocfyHeader
-  @name='Glimmer Apollo'
+  @name="Glimmer Apollo"
   @darkOnly={{true}}
-  @githubUrl='https://github.com/josemarluedke/glimmer-apollo'
+  @githubUrl="https://github.com/josemarluedke/glimmer-apollo"
 >
   <:title>
     Glimmer Apollo
   </:title>
+  <:left>
+    <DocfyJumpTo />
+  </:left>
+
+  <:right as |linkClass linkClassActive|>
+    <LinkTo @route="docs" class={{linkClass}} @activeClass={{linkClassActive}}>
+      Docs
+    </LinkTo>
+  </:right>
 </DocfyHeader>
 
 {{outlet}}

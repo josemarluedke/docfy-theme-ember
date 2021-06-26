@@ -1,0 +1,86 @@
+<button
+  type="button"
+  class="flex items-center rounded focus:ring"
+  {{on "click" this.toggle}}
+  {{did-insert this.setupShortcut}}
+  {{will-destroy this.teardownShortcut}}
+>
+  <svg
+    class="w-4 h-4 mr-2"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  ><path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+    ></path></svg>
+
+  Search
+  <code
+    class="ml-3 rounded border font-bold border-gray-300 dark:border-gray-600 px-2 py-1 text-xs leading-none"
+  >
+    /
+  </code>
+</button>
+
+<Overlay
+  @isOpen={{this.isOpen}}
+  @onClose={{this.toggle}}
+  @didClose={{this.didClose}}
+>
+  <div
+    class="p-4 mx-auto text-white mt-20 max-w-sm w-full"
+    {{did-insert this.registerContainerElement}}
+  >
+    <div class="bg-gray-900 rounded overflow-hidden">
+      {{!  template-lint-disable self-closing-void-elements  }}
+      <input
+        autocomplete="off"
+        placeholder="Search..."
+        class="p-4 bg-gray-900 w-full focus:outline-none border-b border-gray-700 placeholder-gray-500"
+        {{on "input" this.search}}
+        {{on "keydown" this.onInputKeyDown}}
+      />
+      {{!  template-lint-enable self-closing-void-elements  }}
+
+      <div class="space-y-2 max-h-96 overflow-y-scroll">
+        {{#each this.results as |result index|}}
+          <DocfyLink
+            @to={{result.item.url}}
+            class="flex p-4
+              {{if (eq this.selected index) "bg-gray-700 text-white"}}"
+            data-result={{index}}
+            {{on "click" this.onItemClick}}
+            {{on "mouseenter" this.selectElement}}
+          >
+            <span class="font-bold">
+              {{result.item.parentLabel}}
+            </span>
+
+            <svg
+              class="w-4 mx-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+
+            <span class="text-gray-300">
+              {{result.item.title}}
+            </span>
+          </DocfyLink>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</Overlay>

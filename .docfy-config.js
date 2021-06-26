@@ -11,13 +11,13 @@ const highlight = require('rehype-highlight');
 module.exports = {
   repository: {
     url: 'https://github.com/josemarluedke/docfy-theme-ember',
-    editBranch: 'main',
+    editBranch: 'main'
   },
   tocMaxDepth: 3,
   plugins: [withProse({ className: 'prose dark:prose-light' })],
   remarkPlugins: [
     codeTitle,
-    autolinkHeadings,
+    autolinkHeadings
     // highlight
   ],
   rehypePlugins: [highlight],
@@ -25,10 +25,11 @@ module.exports = {
     {
       root: path.resolve(__dirname, '../glimmer-apollo/docs'),
       pattern: '**/*.md',
-      urlPrefix: 'docs',
-    },
+      urlPrefix: 'docs'
+    }
   ],
   labels: {
-    fetching: 'Fetching',
-  },
+    docs: 'Documentation',
+    fetching: 'Fetching'
+  }
 };
