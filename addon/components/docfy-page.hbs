@@ -7,7 +7,7 @@
   <div class='relative lg:flex'>
     <div class='flex-none pt-12 pr-4 lg:w-64'>
       <DocfyOutput @scope='docs' as |node|>
-        <SidebarNav @node={{node}} />
+        <DocfySidebarNav @node={{node}} />
       </DocfyOutput>
     </div>
 
@@ -87,7 +87,7 @@
       </div>
     </div>
     <div class='flex-none hidden w-56 pl-4 lg:block'>
-      <PageHeadings @currentHeadingId={{this.currentHeadingId}} />
+      <DocfyPageHeadings @currentHeadingId={{this.currentHeadingId}} />
     </div>
   </div>
 </div>
