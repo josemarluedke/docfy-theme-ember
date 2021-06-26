@@ -8,7 +8,7 @@
           @route='index'
           class='text-black dark:text-white text-lg font-bold'
         >
-          {{@name}}
+          {{yield to='title'}}
         </LinkTo>
       </div>
       <div class='flex items-center justify-between flex-grow px-2 md:px-6'>
@@ -26,7 +26,7 @@
 
         <div class='flex items-center'>
           <a
-            href='https://github.com/josemarluedke/glimmer-apollo'
+            href={{@githubUrl}}
             target='_blank'
             rel='noopener noreferrer'
             class='ml-4 text-gray-800 dark:text-gray-200 md:ml-6 focus:outline-none focus-visible:shadow-outline hover:text-gray-800 dark:hover:text-gray-400'
