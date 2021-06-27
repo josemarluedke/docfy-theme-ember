@@ -1,6 +1,6 @@
 <button
   type="button"
-  class="flex items-center rounded focus:ring"
+  class="transition flex items-center rounded focus-visible:ring outline-none hover:text-gray-800 dark:hover:text-gray-400"
   {{on "click" this.toggle}}
   {{did-insert this.setupShortcut}}
   {{will-destroy this.teardownShortcut}}
@@ -56,7 +56,7 @@
         {{#each this.results as |result index|}}
           <DocfyLink
             @to={{result.item.url}}
-            class="flex p-4
+            class="flex p-4 outline-none focus-visible:ring ring-inset
               {{if (eq this.selected index) "bg-gray-700 text-white"}}"
             data-result={{index}}
             {{on "click" this.onItemClick}}

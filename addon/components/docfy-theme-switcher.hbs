@@ -1,4 +1,9 @@
-<button type="button" ...attributes {{on "click" this.toggleMode}}>
+<button
+  type="button"
+  class="transition hover:text-gray-800 dark:hover:text-gray-400 outline-none focus-visible:ring"
+  ...attributes
+  {{on "click" this.toggleMode}}
+>
   {{#if this.prefersDark}}
     <VisuallyHidden>
       Switch to Light Mode

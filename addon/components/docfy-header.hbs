@@ -6,7 +6,7 @@
       <div class="flex items-center mr-4">
         <LinkTo
           @route="index"
-          class="text-black dark:text-white text-lg font-bold"
+          class="text-black dark:text-white text-lg font-bold outline-none focus-visible:ring"
         >
           {{yield to="title"}}
         </LinkTo>
@@ -15,7 +15,7 @@
         class="flex items-center justify-between flex-grow px-2 md:px-6 text-gray-800 dark:text-gray-200"
       >
         {{#let
-          "transition pb-1.5 pt-1.5 border-b-2 border-transparent hover:border-primary-700 dark:hover:border-primary-500 focus:outline-none focus-visible:shadow-outline"
+          "transition pb-1.5 pt-1.5 border-b-2 border-transparent hover:border-primary-700 dark:hover:border-primary-500 outline-none focus-visible:ring hover:text-gray-800 dark:hover:text-gray-400"
           "border-primary-700 dark:border-primary-500"
           as |linkClass linkClassActive|
         }}
@@ -30,7 +30,7 @@
               href={{@githubUrl}}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-gray-800 dark:text-gray-200 focus:outline-none focus-visible:shadow-outline hover:text-gray-800 dark:hover:text-gray-400"
+              class="transition text-gray-800 dark:text-gray-200 outline-none focus-visible:ring hover:text-gray-800 dark:hover:text-gray-400"
             >
               <svg viewBox="0 0 20 20" class="w-6 h-6 fill-current">
                 <title>

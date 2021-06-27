@@ -1,6 +1,6 @@
 <button
   type="button"
-  class="fixed z-1 bottom-4 right-4 flex items-center p-4 border rounded-full lg:hidden bg-gray-900 text-white border-gray-700"
+  class="fixed z-1 bottom-4 right-4 flex items-center p-4 border rounded-full lg:hidden bg-gray-900 text-white border-gray-700 focus-visible:ring outline-none"
   {{on "click" this.toggle}}
 >
   <VisuallyHidden>Contents</VisuallyHidden>
@@ -16,12 +16,14 @@
 <Drawer
   @isOpen={{this.isOpen}}
   @onClose={{this.toggle}}
-  @size="sm"
+  @size="xs"
   @allowCloseButton={{false}}
-  class="bg-gray-900 backdrop-filter backdrop-blur bg-opacity-80 dark"
+  class="bg-gray-900 backdrop-filter backdrop-blur bg-opacity-80 dark border-l border-gray-700 outline-none focus-visible:ring ring-inset"
   as |m|
 >
-  <m.CloseButton class="dark:text-white hover:bg-gray-800" />
+  <m.CloseButton
+    class="dark:text-white hover:bg-gray-800 outline-none focus-visible:ring"
+  />
   <m.Header class="border-b border-gray-700 dark:text-white">
     Contents
   </m.Header>

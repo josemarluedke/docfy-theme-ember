@@ -154,7 +154,9 @@ module.exports = {
   },
   variants: {
     extend: {
-      typography: ['dark']
+      typography: ['dark'],
+      boxShadow: ['focus-visible'],
+      ringWidth: ['focus-visible']
     }
   },
   plugins: [
