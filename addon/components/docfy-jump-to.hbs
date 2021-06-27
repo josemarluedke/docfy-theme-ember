@@ -35,7 +35,9 @@
     class="p-4 mx-auto text-white mt-20 max-w-sm w-full"
     {{did-insert this.registerContainerElement}}
   >
-    <div class="bg-gray-900 rounded overflow-hidden">
+    <div
+      class="bg-gray-900 backdrop-filter backdrop-blur bg-opacity-80 rounded overflow-hidden border border-gray-700"
+    >
       {{!  template-lint-disable self-closing-void-elements  }}
       <VisuallyHidden>
         <label for="docfy-jump-to-input">
@@ -46,7 +48,9 @@
         id="docfy-jump-to-input"
         autocomplete="off"
         placeholder="Search..."
-        class="p-4 bg-gray-900 w-full focus:outline-none placeholder-gray-500"
+        class="p-4 bg-transparent w-full focus:outline-none placeholder-gray-500
+          {{if this.results.length "border-b border-gray-700"}}
+          "
         {{on "input" this.search}}
         {{on "keydown" this.onInputKeyDown}}
       />
