@@ -5,7 +5,7 @@
     <div class="flex h-full px-4 mx-auto sm:px-6 max-w-screen-2xl">
       <div class="flex items-center mr-4">
         <LinkTo
-          @route="index"
+          @route={{if @indexRoute @indexRoute "index"}}
           class="text-black dark:text-white text-lg font-bold outline-none focus-visible:ring"
         >
           {{yield to="title"}}
