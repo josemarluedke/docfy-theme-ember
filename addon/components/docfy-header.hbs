@@ -23,7 +23,7 @@
             {{yield linkClass linkClassActive to="left"}}
           </div>
 
-          <div class="flex items-center gap-4">
+          <div class="flex items-center gap-4 sm:gap-6 ml-4">
             {{yield linkClass linkClassActive to="right"}}
 
             <a
@@ -41,6 +41,10 @@
                 ></path>
               </svg>
             </a>
+
+            {{#unless @disableThemeSwitcher}}
+              <DocfyThemeSwitcher class="sm:ml-6" />
+            {{/unless}}
           </div>
         {{/let}}
       </div>

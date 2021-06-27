@@ -13,7 +13,11 @@
   </:left>
 
   <:right as |linkClass linkClassActive|>
-    <LinkTo @route="docs" class={{linkClass}} @activeClass={{linkClassActive}}>
+    <LinkTo
+      @route="docs"
+      class="{{linkClass}} hidden sm:block"
+      @activeClass={{linkClassActive}}
+    >
       Docs
     </LinkTo>
   </:right>

@@ -7,7 +7,7 @@ const env = EmberAddon.env();
 const postcssPlugins = [
   require('postcss-import')({ path: ['node_modules'] }),
   require('tailwindcss')('./tailwind.config.js'),
-  require('autoprefixer'),
+  require('autoprefixer')
 ];
 
 if (env !== 'development') {
@@ -24,9 +24,9 @@ module.exports = function (defaults) {
       compile: {
         enabled: true,
         // cacheInclude: [/.*\.css$/, /tailwind\.config\.js$/],
-        plugins: postcssPlugins,
-      },
-    },
+        plugins: postcssPlugins
+      }
+    }
   });
 
   /*
