@@ -1,27 +1,6 @@
-<button
-  type="button"
-  class="flex items-center px-4 py-2 border rounded lg:hidden border-gray-300 dark:border-gray-700
-    {{if this.isOpen "bg-gray-200 dark:bg-gray-900"}}"
-  {{on "click" this.toggle}}
->
-  <svg class="w-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
-    <path
-      d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-      clip-rule="evenodd"
-      fill-rule="evenodd"
-    ></path>
-  </svg>
-
-  Contents
-</button>
-
-<div
-  class="lg:mt-0 lg:overflow-y-auto lg:sticky top-16 lg:max-h-(screen-16) pt-4 lg:pt-12 pb-4 lg:-mt-12 lg:block
-    {{if this.isOpen "block" "hidden"}}
-    "
->
+<div ...attributes>
   {{! template-lint-disable no-invalid-interactive }}
-  <ul class="space-y-2" {{on "click" this.handleSidebarClick}}>
+  <ul class="space-y-2" {{on "click" @onSidebarClick}}>
     {{! template-lint-enable no-invalid-interactive }}
     {{#each @node.pages as |page|}}
       <li>

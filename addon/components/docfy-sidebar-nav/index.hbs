@@ -1,0 +1,38 @@
+<button
+  type="button"
+  class="fixed z-1 bottom-4 right-4 flex items-center p-4 border rounded-full lg:hidden bg-gray-900 text-white border-gray-300 dark:border-gray-700"
+  {{on "click" this.toggle}}
+>
+  <svg class="w-8" fill="currentColor" viewBox="0 0 20 20">
+    <path
+      d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+      clip-rule="evenodd"
+      fill-rule="evenodd"
+    ></path>
+  </svg>
+</button>
+
+<Drawer
+  @isOpen={{this.isOpen}}
+  @onClose={{this.toggle}}
+  @size="sm"
+  class="bg-gray-900 backdrop-filter backdrop-blur bg-opacity-80 dark:bg-opacity-60 dark"
+  as |m|
+>
+  <m.Header class="border-b border-gray-700 dark:text-white">
+    Contents
+  </m.Header>
+  <m.Body class="dark:text-white">
+    <DocfySidebarNav::Content
+      @node={{@node}}
+      @onSidebarClick={{this.handleSidebarClick}}
+    />
+  </m.Body>
+
+</Drawer>
+
+<DocfySidebarNav::Content
+  @node={{@node}}
+  @onSidebarClick={{this.handleSidebarClick}}
+  class="lg:overflow-y-auto lg:sticky top-16 lg:max-h-(screen-16) pt-4 lg:pt-12 pb-4 lg:-mt-12 lg:block hidden"
+/>

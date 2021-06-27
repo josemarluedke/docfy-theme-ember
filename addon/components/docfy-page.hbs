@@ -1,11 +1,11 @@
-<div class="px-4 mx-auto lg:px-6 max-w-screen-2xl">
+<div class="px-4 mx-auto lg:px-6 max-w-screen-2xl pb-16">
   <DocfyOutput @fromCurrentURL={{true}} as |page|>
     {{page-title "Documentation"}}
     {{page-title page.title}}
   </DocfyOutput>
 
   <div class="relative lg:flex">
-    <div class="flex-none pt-12 pr-4 lg:w-64">
+    <div class="flex-none pr-4 lg:w-64">
       <DocfyOutput @scope={{@scope}} as |node|>
         <DocfySidebarNav @node={{node}} />
       </DocfyOutput>
