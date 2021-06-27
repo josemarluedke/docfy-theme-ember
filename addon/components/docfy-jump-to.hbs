@@ -37,7 +37,13 @@
   >
     <div class="bg-gray-900 rounded overflow-hidden">
       {{!  template-lint-disable self-closing-void-elements  }}
+      <VisuallyHidden>
+        <label for="docfy-jump-to-input">
+          Search
+        </label>
+      </VisuallyHidden>
       <input
+        id="docfy-jump-to-input"
         autocomplete="off"
         placeholder="Search..."
         class="p-4 bg-gray-900 w-full focus:outline-none placeholder-gray-500"

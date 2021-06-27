@@ -99,8 +99,16 @@ export default class DocfyJumpTo extends Component<DocfyJumpToArgs> {
 
   @action onItemClick(event: MouseEvent): void {
     event.preventDefault();
+
+    const target = event.target as HTMLElement;
+    let element: HTMLElement | null = target;
+
+    if (['svg', 'span'].includes(target.tagName.toLowerCase())) {
+      element = target.parentElement;
+    }
+
     this.isOpen = false;
-    const href = (event.target as HTMLElement).getAttribute('href') || '/';
+    const href = element?.getAttribute('href') || '/';
     this.router.transitionTo(href);
   }
 
