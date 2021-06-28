@@ -1,7 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
-const { red } = require('tailwindcss/colors');
-
-// backdrop-filter backdrop-blur bg-opacity-30
+const { pink } = require('tailwindcss/colors');
 
 module.exports = {
   darkMode: 'class',
@@ -25,9 +23,7 @@ module.exports = {
         gray: {
           1000: '#12161f'
         },
-        red,
-        primary: red,
-        brand: '#1c1e24'
+        primary: pink
       },
       zIndex: {
         1: '1'
@@ -76,7 +72,7 @@ module.exports = {
                 color: theme('colors.gray.200')
               },
               a: {
-                color: theme('colors.white')
+                color: theme('colors.primary.400')
               },
               strong: {
                 color: theme('colors.white')
@@ -132,7 +128,7 @@ module.exports = {
         }
       })
     },
-    frontile: (theme) => {
+    frontile: () => {
       return {
         overlays: {
           config: {

@@ -11,7 +11,7 @@
               class="transition block px-2 py-1 border-l-2 hover:text-primary-700 dark:hover:text-primary-300
                 {{if
                   (docfy-eq heading.id @currentHeadingId)
-                  "border-primary-700 text-primary-700 dark:border-primary-500 dark:text-primary-500"
+                  "border-primary-700 text-primary-700 dark:border-primary-400 dark:text-primary-400"
                   "border-transparent"
                 }}"
               {{on "click" this.onClick}}
@@ -28,7 +28,7 @@
                       class="transition block pl-6 py-1 border-l-2 hover:text-primary-700 dark:hover:text-primary-300
                         {{if
                           (docfy-eq subHeading.id @currentHeadingId)
-                          "border-primary-700 text-primary-700 dark:border-primary-500 dark:text-primary-500"
+                          "border-primary-700 text-primary-700 dark:border-primary-400 dark:text-primary-400"
                           "border-transparent"
                         }}"
                       {{on "click" this.onClick}}
