@@ -1,6 +1,7 @@
 <div class="sticky top-0 z-1 {{if @darkOnly "dark"}}">
   <div
-    class="h-16 border-b border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800"
+    class="h-16 border-b border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 backdrop-filter backdrop-blur
+      {{if @darkOnly "dark:bg-opacity-90" "bg-opacity-50 dark:bg-opacity-50"}}"
   >
     <div class="flex h-full px-4 mx-auto sm:px-6 max-w-screen-2xl">
       <div class="flex items-center mr-4">
